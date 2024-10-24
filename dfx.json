@@ -1,0 +1,44 @@
+{
+  "canisters": {
+    "internet_identity": {
+      "candid": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity.did",
+      "frontend": {},
+      "remote": {
+        "id": {
+          "ic": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+        }
+      },
+      "type": "custom",
+      "wasm": "https://github.com/dfinity/internet-identity/releases/latest/download/internet_identity_dev.wasm.gz"
+    },
+    "sikemas_backend": {
+      "main": "src/sikemas_backend/main.mo",
+      "type": "motoko"
+    },
+    "sikemas_frontend": {
+      "dependencies": [
+        "sikemas_backend"
+      ],
+      "source": [
+        "src/sikemas_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "sikemas_frontend"
+    }
+  },
+  "defaults": {
+    "bitcoin": {
+      "enabled": true,
+      "log_level": "info",
+      "nodes": [
+        "127.0.0.1:18444"
+      ]
+    },
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
