@@ -7,7 +7,8 @@ function App() {
   function handleSubmit(event) {
     event.preventDefault();
     const name = event.target.elements.name.value;
-    sikemas_backend.greet(name).then((greeting) => {
+    const address = event.target.elements.address.value;
+    sikemas_backend.greet(name,address).then((greeting) => {
       setGreeting(greeting);
     });
     return false;
@@ -21,6 +22,8 @@ function App() {
       <form action="#" onSubmit={handleSubmit}>
         <label htmlFor="name">Enter your name: &nbsp;</label>
         <input id="name" alt="Name" type="text" />
+        <label htmlFor="address">Enter your address: &nbsp;</label>
+        <input id="address" alt="Address" type="text" />
         <button type="submit">Click Me!</button>
       </form>
       <section id="greeting">{greeting}</section>
